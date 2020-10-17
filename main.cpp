@@ -11,39 +11,38 @@ using namespace std;
  */
 int PrimeScore(int numberIn){
     int count = 0;
+    int mod2 = numberIn % 2;
+    int mod3 = numberIn % 3;
+    int mod5 = numberIn % 5;
+    int mod7 = numberIn % 7;
+    int mod11 = numberIn % 11;
+    int mod13 = numberIn % 13;
+    int mod17 = numberIn % 17;
+    int mod19 = numberIn % 19;
     cout << numberIn << endl;
-    if (numberIn % 2 == 0) {
+    if (mod2 == 0) {
         count += 2;
-        cout << count;
     }
-    else if (numberIn % 3 == 0) {
+    else if (mod3 == 0) {
         count += 3;
-        cout << count;
     }
-    else if (numberIn % 5 == 0) {
+    else if (mod5 == 0) {
         count += 5;
-        cout << count;
     }
-    else if (numberIn % 7 == 0) {
+    else if (mod7 == 0) {
         count += 7;
-        cout << count;
     }
-    else if (numberIn % 11 == 0) {
+    else if (mod11 == 0) {
         count += 11;
-        cout << count;
     }
-    else if (numberIn % 13 == 0) {
+    else if (mod13 == 0) {
         count += 13;
-        cout << count;
     }
-    else if (numberIn % 17 == 0) {
+    else if (mod17 == 0) {
         count += 17;
-        cout << count;
     }
-    else if (numberIn % 19 == 0) {
+    else if (mod19 == 0) {
         count += 19;
-        cout << count;
-    }
     cout << count;
     return 0;
     }
