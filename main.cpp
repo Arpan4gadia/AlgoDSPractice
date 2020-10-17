@@ -1,9 +1,5 @@
 #include <iostream>
-//#include <stdio.h> 
-int main(int argc, char** argv) {
-
-    return 0;
-}
+using namespace std;
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -38,7 +34,7 @@ bool IsLeapYear(int year){
  *          -> and xxxx decades old
  */
 void greetMe(){
-
+    cout << "Hi";
 }
 
 
@@ -49,4 +45,10 @@ void greetMe(){
 void printCPPVersion(){
     printf("__cplusplus = %d!\n", __cplusplus );
 
+}
+
+
+int main(int argc, char** argv) {
+
+    return 0;
 }
