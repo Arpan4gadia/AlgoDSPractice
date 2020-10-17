@@ -10,7 +10,7 @@ using namespace std;
  * @return int          Score.
  */
 int PrimeScore(int numberIn){
-    int count = 0;
+    int score = 0;
     int mod2 = numberIn % 2;
     int mod3 = numberIn % 3;
     int mod5 = numberIn % 5;
@@ -19,31 +19,31 @@ int PrimeScore(int numberIn){
     int mod13 = numberIn % 13;
     int mod17 = numberIn % 17;
     int mod19 = numberIn % 19;
-    cout << numberIn << endl;
     if (mod2 == 0) {
-        count += 2;
+        score += 2;
     }
-    else if (mod3 == 0) {
-        count += 3;
+    if (mod3 == 0) {
+        score += 3;
     }
-    else if (mod5 == 0) {
-        count += 5;
+    if (mod5 == 0) {
+        score += 5;
     }
-    else if (mod7 == 0) {
-        count += 7;
+    if (mod7 == 0) {
+        score += 7;
     }
-    else if (mod11 == 0) {
-        count += 11;
+    if (mod11 == 0) {
+        score += 11;
     }
-    else if (mod13 == 0) {
-        count += 13;
+    if (mod13 == 0) {
+        score += 13;
     }
-    else if (mod17 == 0) {
-        count += 17;
+    if (mod17 == 0) {
+        score += 17;
     }
-    else if (mod19 == 0) {
-        count += 19;
-    cout << count;
+    if (mod19 == 0) {
+        score += 19;
+    }
+    cout << score << endl;
     return 0;
     }
 /**
@@ -95,15 +95,15 @@ void printCPPVersion(){
 
 }
 int main() {
-    greetMe();
-    int myyear;
-    int number;
-    cout << "Enter a year: ";
-    cin >> myyear;
-    IsLeapYear(myyear);
+    int number = 0;
+    int year = 0;
     cout << "Enter any number: ";
     cin >> number;
     PrimeScore(number);
+    cout << "Enter a year: ";
+    cin >> year;
+    IsLeapYear(year);
+    greetMe();
     printCPPVersion();
 
 }   
