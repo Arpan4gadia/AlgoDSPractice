@@ -27,8 +27,13 @@ int PrimeScore(int numberIn){
  * @return true     year is a leap year
  * @return false    
  */
-bool IsLeapYear(int year){
-cout>> "Enter a year:" 
+bool IsLeapYear(int myyear){
+cout << "Enter a year:" << endl;
+cin >> myyear;
+if (myyear % 4 == 0){
+    return true;
+}
+return false;
 }
 
 
@@ -39,7 +44,17 @@ cout>> "Enter a year:"
  *          -> and xxxx decades old
  */
 void greetMe(){
-
+char name[];
+int age;
+cout << "Please enter your name." << endl;
+cin >> name;
+cout << "Please enter your age." << endl;
+cin >> age;
+cout << "Hello" <<  name << endl;
+int month = age/ 12
+int week = month/ 7
+cout << "You are " << week << " weeks old." << endl;
+cout << "and " << age /10 << "decades old." << endl;
 }
 
 
