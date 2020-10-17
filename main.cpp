@@ -28,7 +28,7 @@ int PrimeScore(int numberIn){
  * @return false    
  */
 bool IsLeapYear(int year){
-
+cout>> "Enter a year:" 
 }
 
 
