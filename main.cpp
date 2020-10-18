@@ -43,7 +43,7 @@ int PrimeScore(int numberIn){
     if (mod19 == 0) {
         score += 19;
     }
-    cout << "The score is " << score << "." << endl;
+    cout << "Score: " << score << "." << endl;
     return 0;
     }
 /**
