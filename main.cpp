@@ -43,7 +43,7 @@ int PrimeScore(int numberIn){
     if (mod19 == 0) {
         score += 19;
     }
-    cout << score << endl;
+    cout << "The score is " << score << "." << endl;
     return 0;
     }
 /**
@@ -92,7 +92,6 @@ void greetMe(){
  */
 void printCPPVersion(){
     printf("__cplusplus = %d!\n", __cplusplus);
-
 }
 int main() {
     int number = 0;
