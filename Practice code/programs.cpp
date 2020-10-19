@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 //  Write a program in C++ to find Size of fundamental data types.
