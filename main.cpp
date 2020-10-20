@@ -41,6 +41,20 @@ void greetMe(){
 
 }
 
+/**
+ * @brief Print a triab=ngle of starts
+ *          for size = 3 print:
+ *          *
+ *          * *
+ *          * * *
+ * @param size 
+ */
+
+
+void printIncreasing( int size){
+
+}
+
 
 /**
  * @brief prints the version of cpp used by compiler
