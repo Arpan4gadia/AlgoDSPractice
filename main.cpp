@@ -4,6 +4,8 @@ using namespace std;
 bool IsLeapYear(int);
 int PrimeScore(int);
 void greetMe();
+void printIncreasing(int);
+void printTo(int);
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -52,7 +54,6 @@ int PrimeScore(int numberIn){
     cout << score << endl;
 }
 
-
 /**
  * @brief   Check if the \param year is a leap year i.e. year in which february month contains 29 days 
  *          Leap year can be identified mathematically as year value which is divisible by 4 and, by 400 if divisible by 100 
@@ -61,16 +62,23 @@ int PrimeScore(int numberIn){
  * @return false    
  */
 bool IsLeapYear(int year){
-    bool ret;
-    if (year % 4 == 0){
+    bool ret = true;
+    if (year % 100 == 0){
+        if (year % 400 == 0){
+            ret = true;
+        }
+        else{
+            ret = false;
+        }
+    }
+    else if (year % 4 == 0){
         ret = true;
     }
     else {
         ret = false;
     }
     return ret;
-    }
-
+}
 
 /**
  * @brief Write a function greetMe Which takes you name and age as input.
@@ -92,7 +100,7 @@ void greetMe(){
 }
 
 /**
- * @brief Print a triab=ngle of starts
+ * @brief Print a triangle of starts
  *          for size = 3 print:
  *          *
  *          * *
@@ -100,9 +108,13 @@ void greetMe(){
  * @param size 
  */
 
-
-void printIncreasing( int size){
-
+void printIncreasing(int size){
+    for (int k = 1; k <= size; k++){
+        for (int j = 1; j <= k; j++){
+            cout << "*";
+        }
+        cout << " " << endl;
+    }
 }
 
 
@@ -113,7 +125,9 @@ void printIncreasing( int size){
  */
 
 void printTo(int i){
-
+    for (int j = 0; j <= i; j++){
+        cout << j << endl;
+    }
 } 
 
 /**
@@ -140,6 +154,15 @@ int main() {
     cout << primeScore << endl;
 
     greetMe();
-    return 0;
-    
+
+    int size;
+    cout << "Enter the size" << endl;
+    cin >> size;
+    printIncreasing(size);
+
+    int i;
+    cout << "Enter the number to print until:" << endl;
+    cin >> i;
+    printTo(i);
+    return 0; 
 }
