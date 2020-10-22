@@ -138,7 +138,6 @@ void printCPPVersion(){
     printf("__cplusplus = %d!\n", __cplusplus );
 
 }
-
 int main() {
     int year;
     cout << "Enter a year:" << endl;
