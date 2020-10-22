@@ -86,6 +86,34 @@ void greetMe(){
     cout << "You are " << decades << " decades old." << endl;
 
 }
+
+
+/**
+ * @brief Print a triab=ngle of starts
+ *          for size = 3 print:
+ *          *
+ *          * *
+ *          * * *
+ * @param size 
+ */
+
+
+void printIncreasing( int size){
+
+}
+
+
+/**
+ * @brief printTo should print number starting from 0 to that of i
+ * 
+ * @param i 
+ */
+
+void printTo(int i){
+
+}
+
+
 /**
  * @brief prints the version of cpp used by compiler
  * 
