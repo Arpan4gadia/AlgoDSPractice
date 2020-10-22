@@ -1,10 +1,9 @@
 #include <iostream>
 using namespace std;
 //#include <stdio.h> 
-int main(int argc, char** argv) {
-
-    return 0;
-}
+bool IsLeapYear(int);
+int PrimeScore(int);
+void greetMe();
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -16,7 +15,41 @@ int main(int argc, char** argv) {
  * @return int          Score.
  */
 int PrimeScore(int numberIn){
-
+    int score = 0;
+    if (numberIn % 2 == 0)
+    {
+        score += 2;
+    }
+    if (numberIn % 3 == 0)
+    {
+        score +=3;
+    }
+    if (numberIn % 5 == 0)
+    {
+        score +=5;
+    }
+    if (numberIn % 7 == 0)
+    {
+        score +=7;
+    }
+    if (numberIn % 11 == 0)
+    {
+        score +=11;
+    }
+    if (numberIn % 13 == 0)
+    {
+        score += 13;
+    }
+    if (numberIn % 17 == 0)
+    {
+        score += 17;
+    }
+    if (numberIn % 19 == 0)
+    {
+        score += 19;
+    }
+    return score;
+    cout << score << endl;
 }
 
 
@@ -27,14 +60,16 @@ int PrimeScore(int numberIn){
  * @return true     year is a leap year
  * @return false    
  */
-bool IsLeapYear(int myyear){
-cout << "Enter a year:" << endl;
-cin >> myyear;
-if (myyear % 4 == 0){
-    return true;
-}
-return false;
-}
+bool IsLeapYear(int year){
+    bool ret;
+    if (year % 4 == 0){
+        ret = true;
+    }
+    else {
+        ret = false;
+    }
+    return ret;
+    }
 
 
 /**
@@ -44,19 +79,42 @@ return false;
  *          -> and xxxx decades old
  */
 void greetMe(){
-char name[];
-int age;
-cout << "Please enter your name." << endl;
-cin >> name;
-cout << "Please enter your age." << endl;
-cin >> age;
-cout << "Hello" <<  name << endl;
-int month = age/ 12
-int week = month/ 7
-cout << "You are " << week << " weeks old." << endl;
-cout << "and " << age /10 << "decades old." << endl;
+    string name;
+    int age;
+    cout << "Please enter your name." << endl;
+    cin >> name;
+    cout << "Please enter your age." << endl;
+    cin >> age;
+    cout << "Hello " <<  name << endl;
+    int week = age * 52.14;
+    cout << "You are " << week << " weeks old." << endl;
+    cout << "and " << age /10 << " decades old." << endl;
 }
 
+/**
+ * @brief Print a triab=ngle of starts
+ *          for size = 3 print:
+ *          *
+ *          * *
+ *          * * *
+ * @param size 
+ */
+
+
+void printIncreasing( int size){
+
+}
+
+
+/**
+ * @brief printTo should print number starting from 0 to that of i
+ * 
+ * @param i 
+ */
+
+void printTo(int i){
+
+} 
 
 /**
  * @brief prints the version of cpp used by compiler
@@ -65,4 +123,23 @@ cout << "and " << age /10 << "decades old." << endl;
 void printCPPVersion(){
     printf("__cplusplus = %d!\n", __cplusplus );
 
+}
+
+int main() {
+    int year;
+    cout << "Enter a year:" << endl;
+    cin >> year;
+    bool value = IsLeapYear(year);
+    cout << value << endl;
+
+    int numberIn;
+    cout << "Enter the number" << endl;
+    cin >> numberIn;
+    PrimeScore(numberIn);
+    int primeScore = PrimeScore(numberIn);
+    cout << primeScore << endl;
+
+    greetMe();
+    return 0;
+    
 }
