@@ -84,6 +84,20 @@ void printTo(int i)
 }
 
 /**
+ * @brief factorial is an important mathematical construct. 
+ * We find the factorial value of any number by multiplying all the numbers starting from 1 to that number
+ * Ex: factorial(5) = 1 * 2 * 3 * 4 * 5 
+ * The function below must return the factorial value of input number;
+ * 
+ * @param numIn 
+ * @return int 
+ */
+
+int factorial(int numIn){
+    return 0;
+}
+
+/**
  * @brief prints the version of cpp used by compiler
  * 
  */
