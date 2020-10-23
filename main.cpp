@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stdio.h>
+using namespace std;
 void printIncreasing(); 
 void printTo();
 
@@ -14,8 +14,9 @@ void printTo();
  * @param numberIn 
  * @return int          Score.
  */
-int PrimeScore(int numberIn){
-
+int PrimeScore(int numberIn)
+{
+    return 0;
 }
 
 
@@ -26,8 +27,9 @@ int PrimeScore(int numberIn){
  * @return true     year is a leap year
  * @return false    
  */
-bool IsLeapYear(int year){
-
+bool IsLeapYear(int year)
+{
+    return true;
 }
 
 
@@ -37,8 +39,9 @@ bool IsLeapYear(int year){
  *          -> You are xxxx weeks old
  *          -> and xxxx decades old
  */
-void greetMe(){
-
+void greetMe()
+{
+    return;
 }
 
 /**
@@ -52,17 +55,16 @@ void greetMe(){
 
 void printIncreasing(int size)
 {
-    cout << " please enter size.";
-    cin >> size;
-
-    for (i=0;i>size;i++)
+    for (int i=0;i<=size;i++)
     {
-        for(j=0;j>i;j++)
+        for(int j=0;j<i;j++)
         {
-            cout << "* "
+
+            cout << "* ";
         }
+         cout << endl;
     }    
-    return size;
+    return;
 }
 
 
@@ -74,14 +76,11 @@ void printIncreasing(int size)
 
 void printTo(int i)
 {
-    cout << " Please enter i";
-    cin >>  i;
-
-    for(int j=0;j>i;j++)
+    for(int j=0;j<=i;j++)
     {
         cout << j;
     }
-    return i;
+    return;
 }
 
 /**
@@ -96,7 +95,14 @@ void printCPPVersion(){
 
 int main(int argc, char** argv) 
 {
-    void printIncreasing(int size);
-    void printTo(int i);
+    int size = 0;
+    cout << " please enter size:";
+    cin >> size;
+    printIncreasing(size); 
+
+    int i = 0;
+    cout << " Please enter i:";
+    cin >>  i;
+    printTo(i);
     return 0;
 }
