@@ -54,15 +54,15 @@ int PrimeScore(int numberIn){
  * @return false    
  */
 bool IsLeapYear(int year){
-    int mod = year % 4;
-    int mod100 = year % 100;
-    int mod400 = year % 400;
-    if (mod == 0 || mod100 == 0 && mod400 == 0){
-        cout << "It is a leap year." << endl;
-        return true;
+    bool ret = true;
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                return true;
+            }
+        }
     }
     else {
-        cout << "It is not a leap year." << endl;
         return false;
     }
 }
@@ -86,8 +86,6 @@ void greetMe(){
     cout << "You are " << decades << " decades old." << endl;
 
 }
-
-
 /**
  * @brief Print a triab=ngle of starts
  *          for size = 3 print:
@@ -96,24 +94,24 @@ void greetMe(){
  *          * * *
  * @param size 
  */
-
-
-void printIncreasing( int size){
-
+void printIncreasing( int size) {
+    for (int k = 1; k <= size; k++) {
+        for (int j = 1; j <= k; j++) {
+            cout << "*";
+        }
+        cout << " " << endl;
+    } 
 }
-
-
 /**
  * @brief printTo should print number starting from 0 to that of i
  * 
  * @param i 
  */
-
 void printTo(int i){
-
+    for (int j = 0; j <= i; j++) {
+        cout << j << ", ";
+    }
 }
-
-
 /**
  * @brief prints the version of cpp used by compiler
  * 
@@ -132,5 +130,12 @@ int main() {
     IsLeapYear(year);
     greetMe();
     printCPPVersion();
-
+    int a = 0;
+    cout << "Enter any number: ";
+    cin >> a;
+    printIncreasing(a);
+    int b = 0;
+    cout << "Enter any number: ";
+    cin >> b;
+    printTo(b);
 }   
