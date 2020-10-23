@@ -1,9 +1,9 @@
 #include <iostream>
-//#include <stdio.h> 
-int main(int argc, char** argv) {
+#include <stdio.h>
+void printIncreasing(); 
+void printTo();
 
-    return 0;
-}
+
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -42,7 +42,7 @@ void greetMe(){
 }
 
 /**
- * @brief Print a triab=ngle of starts
+ * @brief Print a triangle of starts
  *          for size = 3 print:
  *          *
  *          * *
@@ -50,9 +50,19 @@ void greetMe(){
  * @param size 
  */
 
+void printIncreasing(int size)
+{
+    cout << " please enter size.";
+    cin >> size;
 
-void printIncreasing( int size){
-
+    for (i=0;i>size;i++)
+    {
+        for(j=0;j>i;j++)
+        {
+            cout << "* "
+        }
+    }    
+    return size;
 }
 
 
@@ -62,8 +72,16 @@ void printIncreasing( int size){
  * @param i 
  */
 
-void printTo(int i){
+void printTo(int i)
+{
+    cout << " Please enter i";
+    cin >>  i;
 
+    for(int j=0;j>i;j++)
+    {
+        cout << j;
+    }
+    return i;
 }
 
 /**
@@ -73,4 +91,12 @@ void printTo(int i){
 void printCPPVersion(){
     printf("__cplusplus = %d!\n", __cplusplus );
 
+}
+
+
+int main(int argc, char** argv) 
+{
+    void printIncreasing(int size);
+    void printTo(int i);
+    return 0;
 }
