@@ -94,7 +94,7 @@ void printTo(int i)
  */
 
 int factorial(int numIn){
-    return 0;
+    return 100;
 }
 
 /**
