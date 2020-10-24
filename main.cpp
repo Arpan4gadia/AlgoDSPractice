@@ -98,6 +98,21 @@ void printTable(int numberIn){
 
 
 /**
+ * @brief Complete the function printSumOfOdds so that 
+ * it prints all the odd numbers till numberIn and also the sum of all numbers on next line
+ * 
+ * Ex:
+ * numberIn = 10
+ * Output:
+ * 1 3 5 7 9
+ * 25
+ * 
+ * @param numberIn 
+ */
+void printSumOfOdds(int numberIn){
+
+}
+/**
  * @brief prints the version of cpp used by compiler
  * 
  */
