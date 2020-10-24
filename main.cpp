@@ -83,7 +83,7 @@ void printIncreasing( int size) {
 }
 void printTo(int i){
     for (int j = 0; j <= i; j++) {
-        cout << j << ", ";
+        cout << j << ", " << endl;
     }
 }
 int factorial(int numIn) {
@@ -102,7 +102,6 @@ long int multiplyNumbers(int n)
     else
         return 1;
 }
-
 void printTable(int numberIn) {
     int i = 0;
     for (i; i <= 10; i++) {
@@ -123,21 +122,28 @@ cout << sum;
 void printCPPVersion(){
     printf("__cplusplus = %d!\n", __cplusplus);
 }
-/**
- * @brief Complete printNumberLines function such that it would print number in following pattern
- * Ex: nLines = 4
- * Output:
- * 1
- * 2 3
- * 4 5 6
- * 7 8 9 10
- *  
- * 
- * @param nLines 
- */
 void printNumberLines(int nLines) {
+    int i = 1;
+    for (int j = 0; j < nLines; ++j) {
+        for (int k = 0; k < (nLines-j); ++k) {
+            cout << i << ' ';
+            i++;
+        }
+        cout << endl;
+    }
+    int l = 0;
+    for (int a = 1; a <= nLines; a++)
+    {
+        for (int b = 1; b <= a; b++)
+        {
+            cout << l << ' ';
+            l++;
+        }
+        cout << endl;
+    }
 }
 int main() {
+
     int number = 0;
     int year = 0;
     cout << "Enter any number: ";
@@ -153,7 +159,7 @@ int main() {
     greetMe();
 
     printCPPVersion();
-    
+
     int a = 0;
     cout << "Enter any number: ";
     cin >> a;
@@ -171,6 +177,7 @@ int main() {
 
     int f = 0;
     cout << "Enter a number: ";
+    cin >> f;
     printf("Factorial of %d = %ld", f, multiplyNumbers(f));
 
     int d = 0;
@@ -182,5 +189,12 @@ int main() {
    cout << "Enter a number: ";
    cin >> e;
    printSumOfOdds(e);
+   
+
+
+   int g = 0;
+   cout << "Enter a number: ";
+   cin >> g;
+   printNumberLines(g);
 
 }   
