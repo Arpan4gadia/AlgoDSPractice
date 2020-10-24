@@ -2,7 +2,7 @@
 using namespace std;
 void printIncreasing(); 
 void printTo();
-
+void Factorial();
 
 
 /**
@@ -93,10 +93,22 @@ void printTo(int i)
  * @return int 
  */
 
-int factorial(int numIn){
-    return 100;
+int factorial(int numIn)
+{
+    int facto = 1;
+    for(int i = 1;i<=numIn;i++)
+    {
+       facto = facto * i;  
+    }
+
+    cout << "The factorial of " << numIn << " is " << facto << ".";
+    return 0;
 }
 
+/**
+ * @brief Area of a square FORMULA :-- side * side;
+  
+ */
 /**
  * @brief prints the version of cpp used by compiler
  * 
@@ -110,7 +122,7 @@ void printCPPVersion(){
 int main(int argc, char** argv) 
 {
     int size = 0;
-    cout << " please enter size:";
+    cout << " Please enter size:";
     cin >> size;
     printIncreasing(size); 
 
@@ -118,5 +130,11 @@ int main(int argc, char** argv)
     cout << " Please enter i:";
     cin >>  i;
     printTo(i);
+
+    int numIn = 0;
+    cout << "Please enter the number for which you want to find the factorial:";
+    cin >> numIn;
+    factorial(numIn);
+
     return 0;
 }
