@@ -95,6 +95,14 @@ int factorial(int numIn) {
     cout << "Factorial of " << numIn << " is: " << fact << endl;
     return 0;
 }
+long int multiplyNumbers(int n)
+{
+    if (n >= 1)
+        return n * multiplyNumbers(n - 1);
+    else
+        return 1;
+}
+
 void printTable(int numberIn) {
     int i = 0;
     for (i; i <= 10; i++) {
@@ -135,12 +143,12 @@ int main() {
     cout << "Enter any number: ";
     cin >> number;
     int score = PrimeScore(number);
-    cout << score;
+    cout << score << endl;
 
     cout << "Enter a year: ";
     cin >> year;
     bool hi = IsLeapYear(year);
-    cout << hi;
+    cout << hi << endl;
 
     greetMe();
 
@@ -160,6 +168,10 @@ int main() {
     cout << "Enter a number: ";
     cin >> c;
     factorial(c);
+
+    int f = 0;
+    cout << "Enter a number: ";
+    printf("Factorial of %d = %ld", f, multiplyNumbers(f));
 
     int d = 0;
     cout << "Enter a number: ";
