@@ -213,6 +213,7 @@ void printCPPVersion(){
 }
 
 
+
 int main(int argc, char** argv) 
 {
 /*    
@@ -247,4 +248,21 @@ int main(int argc, char** argv)
     printNumberLines(nLines);
 
     return 0;
+}
+
+/**
+ * @brief for given number of nSeconds show the time with appropriate units.
+ * include units like days, hours, mins, seconds
+ * Ex 1: nSeconds = 50
+ * Output 1:
+ * 50second
+ * 
+ * Ex 2: nSeconds = 320
+ * Output 2:
+ * 5mins 20seconds
+ * 
+ * @param nSeconds 
+ */
+void printTime(long nSeconds){
+
 }
