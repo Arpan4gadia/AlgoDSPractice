@@ -6,6 +6,9 @@ int PrimeScore(int);
 void greetMe();
 void printIncreasing(int);
 void printTo(int);
+int factorial(int);
+void printTable(int);
+void printSumOfOdds(int);
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -131,6 +134,68 @@ void printTo(int i){
 } 
 
 /**
+ * @brief factorial is an important mathematical construct. 
+ * We find the factorial value of any number by multiplying all the numbers starting from 1 to that number
+ * Ex: factorial(5) = 1 * 2 * 3 * 4 * 5 
+ * The function below must return the factorial value of input number;
+ * 
+ * @param numIn 
+ * @return int 
+ */
+
+int factorial(int numIn){
+    int product = 1;
+    for (int i=1; i <= numIn; i++){
+        product *= i;
+    }
+    return product;
+}
+
+/**
+ * @brief Write a function to print a table of given input numberIn
+ * Ex: numberIn = 7
+ * Output:
+ * 7 * 1 = 7
+ * 7 * 2 = 14
+ * ...
+ * ...
+ * 7 * 10 = 70
+ * 
+ * @param numberIn 
+ */
+void printTable(int numbIn){
+    for (int i = 1; i <=10; i++){
+        cout << numbIn << " * " << i << " = " << numbIn * i << endl;
+    }
+    return;
+}
+
+
+/**
+ * @brief Complete the function printSumOfOdds so that 
+ * it prints all the odd numbers till numberIn and also the sum of all numbers on next line
+ * 
+ * Ex:
+ * nuIn = 10
+ * Output:
+ * 1 3 5 7 9
+ * 25
+ * 
+ * @param nuIn 
+ */
+void printSumOfOdds(int nuIn){
+    int sum = 0;
+    for (int i=1; i<=nuIn; i++){
+        if (i % 2 == 1){
+            cout << i << " ";
+            sum += i;
+        }
+    }
+    cout << " " << endl;
+    cout << sum << endl;
+}
+
+/**
  * @brief prints the version of cpp used by compiler
  * 
  */
@@ -138,15 +203,16 @@ void printCPPVersion(){
     printf("__cplusplus = %d!\n", __cplusplus );
 
 }
+
 int main() {
     int year;
-    cout << "Enter a year:" << endl;
+    cout << "Enter a year to find out whether it is a leap year or not:" << endl;
     cin >> year;
     bool value = IsLeapYear(year);
     cout << value << endl;
 
     int numberIn;
-    cout << "Enter the number" << endl;
+    cout << "Enter the number to calculate the sum of the primes the number is divisible by:" << endl;
     cin >> numberIn;
     PrimeScore(numberIn);
     int primeScore = PrimeScore(numberIn);
@@ -155,13 +221,31 @@ int main() {
     greetMe();
 
     int size;
-    cout << "Enter the size" << endl;
+    cout << "Enter the size of the triangle of stars:" << endl;
     cin >> size;
     printIncreasing(size);
 
     int i;
-    cout << "Enter the number to print until:" << endl;
+    cout << "Enter the number to print until e.g. 0 to the number:" << endl;
     cin >> i;
     printTo(i);
+
+    int numIn;
+    cout << "Please enter a number to perform factorial upon:" << endl;
+    cin >> numIn;
+    factorial(numIn);
+    int fact = factorial(numIn);
+    cout << fact << endl;
+
+    int numbIn;
+    cout << "Enter a number to write the multiplication tables until 10:" << endl;
+    cin >> numbIn;
+    printTable(numbIn);
+
+    int nuIn;
+    cout << "Please enter the number to print the odds until, then calculate the sum of these numbers:" << endl;
+    cin >> nuIn;
+    printSumOfOdds(nuIn);
+
     return 0; 
 }
