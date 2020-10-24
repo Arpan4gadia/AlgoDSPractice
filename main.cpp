@@ -81,6 +81,23 @@ int factorial(int numIn){
 }
 
 /**
+ * @brief Write a function to print a table of given input numberIn
+ * Ex: numberIn = 7
+ * Output:
+ * 7 * 1 = 7
+ * 7 * 2 = 14
+ * ...
+ * ...
+ * 7 * 10 = 70
+ * 
+ * @param numberIn 
+ */
+void printTable(int numberIn){
+
+}
+
+
+/**
  * @brief prints the version of cpp used by compiler
  * 
  */
