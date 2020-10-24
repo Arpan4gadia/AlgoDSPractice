@@ -1,14 +1,5 @@
 #include <iostream>
 using namespace std;
-/**
- * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
- *                      Score is sum of all the prime numbers @param numberIn is divisible by.
- *                      <Consider the prime numbers less than 20>
- * \param
- * 
- * @param numberIn 
- * @return int          Score.
- */
 int PrimeScore(int numberIn){
     int score = 0;
     int mod2 = numberIn % 2;
@@ -43,38 +34,34 @@ int PrimeScore(int numberIn){
     if (mod19 == 0) {
         score += 19;
     }
-    cout << "Score: " << score << "." << endl;
-    return 0;
+    return score;
     }
-/**
- * @brief   Check if the \param year is a leap year i.e. year in which february month contains 29 days 
- *          Leap year can be identified mathematically as year value which is divisible by 4 and, by 400 if divisible by 100 
- * @param year 
- * @return true     year is a leap year
- * @return false    
- */
 bool IsLeapYear(int year){
     bool ret = true;
-    if (year % 4 == 0) {
-        if (year % 100 == 0) {
-            if (year % 400 == 0) {
-                return true;
-            }
+    if (year % 100 == 0)
+    {
+        if (year % 400 == 0)
+        {
+            ret = true;
+        }
+        else
+        {
+            ret = false;
         }
     }
-    else {
-        return false;
+    else if (year % 4 == 0)
+    {
+        ret = true;
     }
+    else
+    {
+        ret = false;
+    }
+    return ret;
 }
-/**
- * @brief Write a function greetMe Which takes you name and age as input.
- *          -> It should greet saying "Hello <Name>"
- *          -> You are xxxx weeks old
- *          -> and xxxx decades old
- */
-void greetMe(){
+void greetMe() {
     string name = "";
-    int age;
+    int age = 0;
     cout << "Enter your name: ";
     cin >> name;
     cout << "Hello " << name << endl;
@@ -86,14 +73,6 @@ void greetMe(){
     cout << "You are " << decades << " decades old." << endl;
 
 }
-/**
- * @brief Print a triab=ngle of starts
- *          for size = 3 print:
- *          *
- *          * *
- *          * * *
- * @param size 
- */
 void printIncreasing( int size) {
     for (int k = 1; k <= size; k++) {
         for (int j = 1; j <= k; j++) {
@@ -102,40 +81,81 @@ void printIncreasing( int size) {
         cout << " " << endl;
     } 
 }
-/**
- * @brief printTo should print number starting from 0 to that of i
- * 
- * @param i 
- */
 void printTo(int i){
     for (int j = 0; j <= i; j++) {
         cout << j << ", ";
     }
 }
-/**
- * @brief prints the version of cpp used by compiler
- * 
- */
+int factorial(int numIn) {
+    int i = 1, fact = 1;
+    for (i = 1; i <= numIn; i++)
+    {
+        fact = fact * i;
+    }
+    cout << "Factorial of " << numIn << " is: " << fact << endl;
+    return 0;
+}
+void printTable(int numberIn) {
+    int i = 0;
+    for (i; i <= 10; i++) {
+        cout << numberIn << " * " << i << " = " << numberIn * i << endl;
+    }
+}
+void printSumOfOdds(int numberIn) {
+    int i = 0;
+    int sum = 0;
+    for (i; i <= numberIn; i++) {
+        if (i % 2 == 1) {
+            cout << i << ", ";
+            sum += i;
+        }
+        }
+cout << sum;
+}
 void printCPPVersion(){
     printf("__cplusplus = %d!\n", __cplusplus);
+
 }
 int main() {
     int number = 0;
     int year = 0;
     cout << "Enter any number: ";
     cin >> number;
-    PrimeScore(number);
+    int score = PrimeScore(number);
+    cout << score;
+
     cout << "Enter a year: ";
     cin >> year;
-    IsLeapYear(year);
+    bool hi = IsLeapYear(year);
+    cout << hi;
+
     greetMe();
+
     printCPPVersion();
+    
     int a = 0;
     cout << "Enter any number: ";
     cin >> a;
     printIncreasing(a);
+
     int b = 0;
-    cout << "Enter any number: ";
+    cout << "Enter any number: " << endl;
     cin >> b;
     printTo(b);
+
+    int c = 0;
+    cout << "Enter a number: ";
+    cin >> c;
+    factorial(c);
+
+    int d = 0;
+    cout << "Enter a number: ";
+    cin >> d;
+    printTable(d);
+
+   int e = 0;
+   cout << "Enter a number: ";
+   cin >> e;
+   printSumOfOdds(e);
+
 }   
