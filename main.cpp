@@ -94,7 +94,7 @@ void printTo(int i)
  * @return int 
  */
 
-/*int factorial(int numIn)
+int factorial(int numIn)
 {
     int facto = 1;
     for(int i = 1;i<=numIn;i++)
@@ -105,7 +105,6 @@ void printTo(int i)
     cout << "The factorial of " << numIn << " is " << facto << ".";
     return 0;
 }
-*/
 
 
 /**
@@ -147,7 +146,7 @@ void printSumOfOdds(int numberIn)
         if (i % 2 == 1)
         {
             cout << i;
-            cout << " ";
+            cout << " + ";
             sum = sum + i;
         }
         else if (i % 2 == 0)
@@ -171,7 +170,7 @@ void printCPPVersion(){
 
 int main(int argc, char** argv) 
 {
-    /*
+    
     int size = 0;
     cout << " Please enter size:";
     cin >> size;
@@ -191,8 +190,7 @@ int main(int argc, char** argv)
     cout << "Please enter the lenght of the side of the square in cm:";
     cin >> side;
     squareArea(side);
-    */
-
+    
     int numberIn = 0;
     cout << "Please enter the number till which you want the odd numbers and it's sum:";
     cin >> numberIn;
