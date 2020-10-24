@@ -114,7 +114,20 @@ cout << sum;
 }
 void printCPPVersion(){
     printf("__cplusplus = %d!\n", __cplusplus);
-
+}
+/**
+ * @brief Complete printNumberLines function such that it would print number in following pattern
+ * Ex: nLines = 4
+ * Output:
+ * 1
+ * 2 3
+ * 4 5 6
+ * 7 8 9 10
+ *  
+ * 
+ * @param nLines 
+ */
+void printNumberLines(int nLines) {
 }
 int main() {
     int number = 0;
