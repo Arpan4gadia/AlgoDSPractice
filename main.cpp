@@ -4,6 +4,7 @@ void printIncreasing();
 void printTo();
 void Factorial();
 int squareArea();
+void printSumOfOdds();
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -125,7 +126,38 @@ int squareArea(int side)
     return 0;
 }
 
+/**
+ * @brief Complete the function printSumOfOdds so that 
+ * it prints all the odd numbers till numberIn and also the sum of all numbers on next line
+ * 
+ * Ex:
+ * numberIn = 10
+ * Output:
+ * 1 3 5 7 9
+ * 25
+ * 
+ * @param numberIn 
+ */
 
+void printSumOfOdds(int numberIn)
+{
+    int sum = 0;
+    for(int i = 1;i <= numberIn;i++)
+    {
+        if (i % 2 == 1)
+        {
+            cout << i;
+            cout << " ";
+            sum = sum + i;
+        }
+        else if (i % 2 == 0)
+        {
+            continue;
+        }
+    }
+    cout << "The sum of the odd numebers under " << numberIn << " is " << sum << ".";
+    return;
+}
 
 /**
  * @brief prints the version of cpp used by compiler
@@ -139,6 +171,7 @@ void printCPPVersion(){
 
 int main(int argc, char** argv) 
 {
+    /*
     int size = 0;
     cout << " Please enter size:";
     cin >> size;
@@ -158,6 +191,12 @@ int main(int argc, char** argv)
     cout << "Please enter the lenght of the side of the square in cm:";
     cin >> side;
     squareArea(side);
+    */
+
+    int numberIn = 0;
+    cout << "Please enter the number till which you want the odd numbers and it's sum:";
+    cin >> numberIn;
+    printSumOfOdds(numberIn);
 
     return 0;
 }
