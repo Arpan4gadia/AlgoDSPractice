@@ -159,6 +159,53 @@ void printSumOfOdds(int numberIn)
 }
 
 /**
+ * @brief Write a function to print a table of given input numberIn
+ * Ex: numberIn = 7
+ * Output:
+ * 7 * 1 = 7
+ * 7 * 2 = 14
+ * ...
+ * ...
+ * 7 * 10 = 70
+ * 
+ * @param numberIn 
+ */
+void printTable(int numberIn){
+
+}
+
+/**
+ * @brief Complete printNumberLines function such that it would print number in following pattern
+ * Ex: nLines = 4
+ * Output:
+ * 1
+ * 2 3
+ * 4 5 6
+ * 7 8 9 10
+ *  
+ * 
+ * @param nLines 
+ */
+void printNumberLines(int nLines){
+
+}
+
+/**
+ * @brief Complete the function printSumOfOdds so that 
+ * it prints all the odd numbers till numberIn and also the sum of all numbers on next line
+ * 
+ * Ex:
+ * numberIn = 10
+ * Output:
+ * 1 3 5 7 9
+ * 25
+ * 
+ * @param numberIn 
+ */
+void printSumOfOdds(int numberIn){
+
+}
+/**
  * @brief prints the version of cpp used by compiler
  * 
  */
