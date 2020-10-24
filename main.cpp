@@ -3,7 +3,7 @@ using namespace std;
 void printIncreasing(); 
 void printTo();
 void Factorial();
-
+int squareArea();
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -106,9 +106,26 @@ int factorial(int numIn)
 }
 
 /**
- * @brief Area of a square FORMULA :-- side * side;
+ * @brief Area of a square FORMULA :-- area = side * side;
   
  */
+
+int squareArea(int side)
+{
+    //declare
+    int area = 0;
+
+    // find area
+    area = side * side;
+
+    //Print
+    cout << "The are of the square with length " << side << " is " << area << "cm2.";
+
+    return 0;
+}
+
+
+
 /**
  * @brief prints the version of cpp used by compiler
  * 
@@ -135,6 +152,11 @@ int main(int argc, char** argv)
     cout << "Please enter the number for which you want to find the factorial:";
     cin >> numIn;
     factorial(numIn);
+
+    int side = 0;
+    cout << "Please enter the lenght of the side of the square in cm:";
+    cin >> side;
+    squareArea(side);
 
     return 0;
 }
