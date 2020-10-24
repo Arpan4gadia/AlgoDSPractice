@@ -9,6 +9,9 @@ void printTo(int);
 int factorial(int);
 void printTable(int);
 void printSumOfOdds(int);
+void printNumberLines(int);
+void printNumberLinesBackwards(int);
+void printTime(long);
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -110,7 +113,6 @@ void greetMe(){
  *          * * *
  * @param size 
  */
-
 void printIncreasing(int size){
     for (int k = 1; k <= size; k++){
         for (int j = 1; j <= k; j++){
@@ -126,7 +128,6 @@ void printIncreasing(int size){
  * 
  * @param i 
  */
-
 void printTo(int i){
     for (int j = 0; j <= i; j++){
         cout << j << endl;
@@ -142,7 +143,6 @@ void printTo(int i){
  * @param numIn 
  * @return int 
  */
-
 int factorial(int numIn){
     int product = 1;
     for (int i=1; i <= numIn; i++){
@@ -170,7 +170,6 @@ void printTable(int numbIn){
     return;
 }
 
-
 /**
  * @brief Complete the function printSumOfOdds so that 
  * it prints all the odd numbers till numberIn and also the sum of all numbers on next line
@@ -196,6 +195,30 @@ void printSumOfOdds(int nuIn){
 }
 
 /**
+ * @brief Complete printNumberLines function such that it would print number in following pattern
+ * Ex: nLines = 4
+ * Output:
+ * 1
+ * 2 3
+ * 4 5 6
+ * 7 8 9 10
+ *  
+ * 
+ * @param nLines 
+ */
+void printNumberLines(int nLines){
+    int i = 0;
+    for (int k = 1; k <= nLines; k++){
+        for (int j = 1; j <= k; j++){
+            cout << i << " ";
+            i++;
+        }
+        cout << " " << endl;
+    }
+    return;
+}
+
+/**
  * @brief prints the version of cpp used by compiler
  * 
  */
@@ -204,6 +227,42 @@ void printCPPVersion(){
 
 }
 
+void printNumberLinesBackwards(int numLines){
+    int i = 1;
+    for (int k = numLines; k >= 1; k--){
+        for (int j = k; j >= 1; j--){
+            cout << i << " ";
+            i++;
+        }
+        cout << " " << endl;
+    }
+    return;
+}
+
+/**
+ * @brief for given number of nSeconds show the time with appropriate units.
+ * include units like days, hours, mins, seconds
+ * Ex 1: nSeconds = 50
+ * Output 1:
+ * 50second
+ * 
+ * Ex 2: nSeconds = 320
+ * Output 2:
+ * 5mins 20seconds
+ * 
+ * @param nSeconds 
+ */
+void printTime(long nSeconds){
+    if (nSeconds >= 60){
+        int seconds = nSeconds % 60;
+        int min = nSeconds - seconds;
+        int minutes = min/60;
+        cout << minutes << " minutes " << seconds << " seconds." << endl;
+    }
+    else{
+        cout << nSeconds << " seconds." << endl;
+    }
+}
 int main() {
     int year;
     cout << "Enter a year to find out whether it is a leap year or not:" << endl;
@@ -247,5 +306,19 @@ int main() {
     cin >> nuIn;
     printSumOfOdds(nuIn);
 
+    int nLines;
+    cout << "Enter a number" << endl;
+    cin >> nLines;
+    printNumberLines(nLines);
+
+    int numLines;
+    cout << "Enter the number:" << endl;
+    cin >> numLines;
+    printNumberLinesBackwards(numLines);
+
+    long nSeconds;
+    cout << "Print the number of seconds:" << endl;
+    cin >> nSeconds;
+    printTime(nSeconds);
     return 0; 
 }
