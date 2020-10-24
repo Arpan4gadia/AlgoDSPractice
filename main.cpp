@@ -93,7 +93,7 @@ void printTo(int i)
  * @return int 
  */
 
-int factorial(int numIn)
+/*int factorial(int numIn)
 {
     int facto = 1;
     for(int i = 1;i<=numIn;i++)
@@ -104,12 +104,13 @@ int factorial(int numIn)
     cout << "The factorial of " << numIn << " is " << facto << ".";
     return 0;
 }
+*/
+
 
 /**
  * @brief Area of a square FORMULA :-- area = side * side;
   
  */
-
 int squareArea(int side)
 {
     //declare
