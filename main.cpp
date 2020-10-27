@@ -103,7 +103,7 @@ long int multiplyNumbers(int n)
         return 1;
 }
 void printTable(int numberIn) {
-    int i = 0;
+    int i = 1;
     for (i; i <= 10; i++) {
         cout << numberIn << " * " << i << " = " << numberIn * i << endl;
     }
