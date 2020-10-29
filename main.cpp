@@ -254,10 +254,13 @@ void printNumberLinesBackwards(int numLines){
  */
 void printTime(long nSeconds){
     if (nSeconds >= 60){
+        int days = nSeconds/86400;
+        int hour = nSeconds/3600;
+        int hours = hour % 24;
+        int minute = nSeconds/60;
+        int minutes = minute % 60;
         int seconds = nSeconds % 60;
-        int min = nSeconds - seconds;
-        int minutes = min/60;
-        cout << minutes << " minutes " << seconds << " seconds." << endl;
+        cout << days << " days " << hours << " hours " << minutes << " minutes " << seconds << " seconds." << endl;
     }
     else{
         cout << nSeconds << " seconds." << endl;
