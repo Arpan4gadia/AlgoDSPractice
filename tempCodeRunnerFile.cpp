@@ -1,2 +1,2 @@
 
-    cout << "Please enter a number:" << endl;
+void printNumberLinesBackwards(int);

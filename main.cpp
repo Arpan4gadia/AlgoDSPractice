@@ -1,6 +1,7 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-//#include <stdio.h> 
+include <stdio.h> 
 bool IsLeapYear(int);
 int PrimeScore(int);
 void greetMe();
@@ -12,6 +13,9 @@ void printSumOfOdds(int);
 void printNumberLines(int);
 void printNumberLinesBackwards(int);
 void printTime(long);
+bool isPrime(int);
+void printPrimes(int);
+void printFactors(int);
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -121,7 +125,6 @@ void printIncreasing(int size){
         cout << " " << endl;
     }
 }
-
 
 /**
  * @brief printTo should print number starting from 0 to that of i
@@ -266,6 +269,51 @@ void printTime(long nSeconds){
         cout << nSeconds << " seconds." << endl;
     }
 }
+
+bool isPrime(int numberInput){
+    bool returnValue = true;
+    for (int i = 2; i < numberInput; i++){
+        if (numberInput % i == 0){
+            returnValue = false;
+            break;
+        }
+        else if (numberInput == 0){
+            returnValue = false;
+            break;
+        }
+        else{
+            continue;
+        }
+    }
+    return returnValue;
+}
+
+void printPrimes(int numUntil){
+    vector<int> printNumbers;
+    for (int i = 2; i < numUntil; i++){
+        if (isPrime(i) == 1){
+            printNumbers.push_back(i);
+        }
+    }
+    for (int j = 0; j < printNumbers.size(); j++){
+        cout << printNumbers[j] << endl;
+    }
+}
+
+void printFactors(int numInput){
+    vector<int> printFactors;
+    for (int i = 2; i <= numInput; i++){
+        if (numInput % i == 0){
+            if (isPrime(i) == 1){
+                printFactors.push_back(i);
+            }
+        }
+    }
+    for (int j = 0; j < printFactors.size(); j++){
+        cout << printFactors[j] << endl;
+    }
+}
+
 int main() {
     int year;
     cout << "Enter a year to find out whether it is a leap year or not:" << endl;
@@ -323,5 +371,21 @@ int main() {
     cout << "Print the number of seconds:" << endl;
     cin >> nSeconds;
     printTime(nSeconds);
+
+    int numberInput;
+    cout << "Print the number to check if its prime or not:" << endl;
+    cin >> numberInput;
+    bool rValue = isPrime(numberInput);
+    cout << rValue << endl;
+
+    int numUntil;
+    cout << "Enter the number to print the primes until:" << endl;
+    cin >> numUntil;
+    printPrimes(numUntil);
+
+    int numInput;
+    cout << "Enter the number to print the prime factors of it:" << endl;
+    cin >> numInput;
+    printFactors(numInput);
     return 0; 
 }
