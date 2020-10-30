@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-include <stdio.h> 
+
 bool IsLeapYear(int);
 int PrimeScore(int);
 void greetMe();
