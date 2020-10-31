@@ -16,6 +16,8 @@ void printTime(long);
 bool isPrime(int);
 void printPrimes(int);
 void printFactors(int);
+int findGCF(int, int);
+int findLCM(int, int);
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -302,18 +304,43 @@ void printPrimes(int numUntil){
 
 void printFactors(int numInput){
     vector<int> printFactors;
-    for (int i = 2; i <= numInput; i++){
-        if (numInput % i == 0){
-            if (isPrime(i) == 1){
-                printFactors.push_back(i);
+    while (numInput > 1){
+        for (int i = 2; i <= numInput; i++){
+            if (numInput % i == 0){
+                if (isPrime(i) == 1){
+                    printFactors.push_back(i);
+                    numInput = numInput/i;
+                    break;
+                }
             }
         }
     }
     for (int j = 0; j < printFactors.size(); j++){
-        cout << printFactors[j] << endl;
-    }
+            cout << printFactors[j] << endl;
+        }
 }
 
+int findGCF(int num1, int num2){
+    int gcf = 1;
+    int min;
+    if (num1 > num2){
+        min = num2;
+    }
+    else if (num1 < num2){
+        min = num1;
+    }
+    for (int i = 1; i <= min; i++){
+        if (num1 % i == 0 && num2 % i == 0){
+            gcf = i;
+        }
+    }
+    return gcf;
+}
+
+int findLCM(int n1, int n2){
+    int lcm = n1 * n2 / findGCF(n1, n2);
+    return lcm;
+}
 int main() {
     int year;
     cout << "Enter a year to find out whether it is a leap year or not:" << endl;
@@ -387,5 +414,22 @@ int main() {
     cout << "Enter the number to print the prime factors of it:" << endl;
     cin >> numInput;
     printFactors(numInput);
+
+    int num1, num2;
+    cout << "Enter the first number:" << endl;
+    cin >> num1;
+    cout << "Enter the second number:" << endl;
+    cin >> num2;
+    int gcf = findGCF(num1, num2);
+    cout << gcf << endl;
+
+    int n1, n2;
+    cout << "Enter the first number to calculate the LCM of:" << endl;
+    cin >> n1;
+    cout << "Enter the second number to calculate the LCM of:" << endl;
+    cin >> n2;
+    int lcm = findLCM(n1, n2);
+    cout << lcm << endl;
+
     return 0; 
 }
