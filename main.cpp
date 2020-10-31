@@ -1,5 +1,26 @@
 #include <iostream>
+#include <vector>
 using namespace std;
+
+int PrimeScore(int);
+bool IsLeapYear(int);
+void greetMe();
+void printIncreasing(int);
+void printTo(int);
+int factorial(int);
+int multiplyNumbers(int);
+void printTable(int);
+void printSumOfOdds(int);
+void printCPPVersion();
+void printNumberLines(int);
+bool isPrime(int);
+vector<int> PrintPrimes(int);
+vector<int> PrimeFactors(int);
+int FindGCD(int, int);
+int FindLCM(int, int); 
+int PrintVector(vector<int>);
+int FindPoints(int);
+
 int PrimeScore(int numberIn){
     int score = 0;
     int mod2 = numberIn % 2;
@@ -95,15 +116,14 @@ int factorial(int numIn) {
     cout << "Factorial of " << numIn << " is: " << fact << endl;
     return 0;
 }
-long int multiplyNumbers(int n)
-{
+int multiplyNumbers(int n) {
     if (n >= 1)
         return n * multiplyNumbers(n - 1);
     else
         return 1;
 }
 void printTable(int numberIn) {
-    int i = 1;
+    int i = 0;
     for (i; i <= 10; i++) {
         cout << numberIn << " * " << i << " = " << numberIn * i << endl;
     }
@@ -142,8 +162,100 @@ void printNumberLines(int nLines) {
         cout << endl;
     }
 }
-int main() {
+bool isPrime(int InNumber)
+{
+    if (InNumber == 2)
+        return true;
+    for (int i = 2; InNumber > i; i++)
+    {
+        if (InNumber % i == 0)
+            return false;
+    }
+    return true;
+}
+vector<int> PrintPrimes(int InputNum)
+{
+    vector<int> primes;
+    for (int i = 2; InputNum > i; i++)
+    {
+        if (isPrime(i) == true)
+        {
+            primes.push_back(i);
+        }
+    }
+    return primes;
+}
+vector<int> PrimeFactors(int n) {
+    vector<int> factors;
+    while (n > 1)
+    {
+        for (int yay = 2; yay <= n; yay++)
+        {
+            if (n % yay == 0)
+            {
+                if (isPrime(yay) == 1)
+                {
+                    factors.push_back(yay);
+                    n = n / yay;
+                    break;
+                }
+            }
+        }
+    }
+    return factors;
+}
+int FindGCD(int num1, int num2) {
+    vector<int> common;
+    vector<int> factors_of_num1 = PrimeFactors(num1);
+    vector<int> factors_of_num2 = PrimeFactors(num2);
 
+    for (int item = 0; item < factors_of_num1.size(); item++) {
+        for (int item1 = 0; item1 < factors_of_num2.size(); item1++) {
+            if (factors_of_num1[item] == 0 || factors_of_num2[item1] == 0) 
+                continue;
+            if (factors_of_num1[item]  == factors_of_num2[item1]) {
+                common.push_back(factors_of_num1[item]);
+                factors_of_num1[item] = 0;
+                factors_of_num2[item1] = 0;
+            }
+        }
+    }
+
+    
+    int gcd = 1;
+
+    for (int i = 0; i < common.size(); i++) {
+        gcd *= common[i];
+    }
+    return gcd;
+}
+int PrintVector(vector<int> vector) {
+    for (int i = 0; i < vector.size(); i++) {
+        cout << vector[i] << " ";
+    }
+    return 0;
+}
+int FindLCM(int n1, int n2) {
+    int lcm = n1 * n2 / FindGCD(n1, n2);
+    return lcm;
+}
+int FindPoints(int S) {
+    // Calculate Manhatan distance
+    int num1 = 0;
+    for (int a = -1 * S; a <= S; a++)
+    {
+        for (int b = -1 * S; b <= S; b++)
+        {
+            if (std::abs(a) + std::abs(b) <= S)
+            {
+                num1 += 1;
+            }
+        }
+    }
+    return num1;
+}
+int main()
+{
     int number = 0;
     int year = 0;
     cout << "Enter any number: ";
@@ -160,10 +272,12 @@ int main() {
 
     printCPPVersion();
 
+
     int a = 0;
     cout << "Enter any number: ";
     cin >> a;
     printIncreasing(a);
+
 
     int b = 0;
     cout << "Enter any number: " << endl;
@@ -185,16 +299,55 @@ int main() {
     cin >> d;
     printTable(d);
 
-   int e = 0;
-   cout << "Enter a number: ";
-   cin >> e;
-   printSumOfOdds(e);
-   
+    int e = 0;
+    cout << "Enter a number: ";
+    cin >> e;
+    printSumOfOdds(e);
 
+    int g = 0;
+    cout << "Enter a number: ";
+    cin >> g;
+    printNumberLines(g);
 
-   int g = 0;
-   cout << "Enter a number: ";
-   cin >> g;
-   printNumberLines(g);
+    int number = 0;
+    cout << "Enter a number: ";
+    cin >> number;
+    bool prime = isPrime(number);
+    cout << prime;
 
-}   
+    int numinput = 0;
+    cout << "Enter a number: ";
+    cin >> numinput;
+    vector<int> primes = PrintPrimes(numinput);
+    for (int j = 0; j <= primes.size(); j++)
+    {
+        cout << primes[j];
+    }
+    int prime_factors = 0;
+    cout << "Enter a number: ";
+    cin >> prime_factors;
+    vector<int> factors = PrimeFactors(prime_factors);
+    for (int j = 0; j < factors.size(); j++)
+    {
+        cout << factors[j] << ", ";
+    }
+
+    int num1 = 0; 
+    int num2 = 0;
+    cout << "Enter num1: ";
+    cin >> num1;
+    cout << "Enter num2: ";
+    cin >> num2;
+    int gcd1 = FindGCD(num1, num2);
+    cout << gcd1 << endl;
+
+    int a = 0, b = 0;
+    cout << "Enter a: ";
+    cin >> a;
+    cout << "Enter b: ";
+    cin >> b;
+    int lcm = FindLCM(a, b);
+
+    int points = FindPoints(23);
+    cout << points;
+}
