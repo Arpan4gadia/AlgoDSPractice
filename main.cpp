@@ -20,6 +20,7 @@ int FindGCD(int, int);
 int FindLCM(int, int); 
 int PrintVector(vector<int>);
 int FindPoints(int);
+int get_fibon();
 
 int PrimeScore(int numberIn){
     int score = 0;
@@ -254,6 +255,26 @@ int FindPoints(int S) {
     }
     return num1;
 }
+int get_fibon() {
+    try {
+        double long a = 0, b = 1;
+        int times = 0;
+        cout << "Enter how many times: ";
+        cin >> times;
+        for (int i = 0; i < (times - 3); i++)
+        {
+            a = a + b;
+            b = b + a;
+            cout << a << endl;
+            cout << b << endl;
+        }
+    }
+    catch (overflow_error e1) {
+        cout << "Overflow.";
+    }
+
+    return 0;
+}
 int main()
 {
     int number = 0;
@@ -353,4 +374,7 @@ int main()
     cin >> points;
     points1 = FindPoints(points)
     cout << points1;
+    
+    get_fibon();
+    return 0;
 }
