@@ -348,6 +348,9 @@ int main()
     cin >> b;
     int lcm = FindLCM(a, b);
 
-    int points = FindPoints(23);
-    cout << points;
+    int points = 0;
+    cout << "Enter the amount of points: ";
+    cin >> points;
+    points1 = FindPoints(points)
+    cout << points1;
 }
