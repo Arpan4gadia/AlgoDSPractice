@@ -18,6 +18,9 @@ void printPrimes(int);
 void printFactors(int);
 int findGCF(int, int);
 int findLCM(int, int);
+int MDistance(int);
+void gameOf21();
+vector<int> oneToN(int);
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -341,6 +344,68 @@ int findLCM(int n1, int n2){
     int lcm = n1 * n2 / findGCF(n1, n2);
     return lcm;
 }
+
+int MDistance(int S){
+    int num = 0;
+    for (int a = -1 * S; a <= S; a++){
+        for (int b = -1 * S; b <= S; b++){
+            if (abs(a) + abs(b) <= S){
+                num += 1;
+            }
+        }
+    }
+    return num;
+}
+
+void gameOf21(){
+    int ms = 21, p1, p2;
+    int turn = 1;
+    while (ms > 0){
+        if (turn == 1){
+            cout << "Enter the number of matchsticks between 1 and 4 (Player 1):" << endl;
+            cin >> p1;
+            if (1 <= p1 && p1 <= 4){
+                ms -= p1;
+                turn = 2;
+            }
+            else{
+                cout << "Error, please enter a number between 1 and 4." << endl;
+                turn = 1;
+            }
+            if (ms <= 0){
+                cout << "Player 2 wins!" << endl;
+                break;
+            }
+            cout << ms << endl;
+        }
+        if (turn == 2){
+            cout << "Enter the number of matchsticks between 1 and 4 (Player 2):" << endl;
+            cin >> p2;
+            if (1 <= p2 && p2 <= 4){
+                ms -= p2;
+                turn = 1;
+            }
+            else{
+                cout << "Error, please enter a number between 1 and 4." << endl;
+                turn = 2;
+            }
+            if (ms <= 0){
+                cout << "Player 1 wins!" << endl;
+                break;
+            }
+            cout << ms << endl;
+        }
+    }
+}
+
+vector<int> oneToN(int n){
+    vector<int> oneToNum;
+    for (int i = 1; i <= n; i++){
+        oneToNum.push_back(i);
+    }
+    return oneToNum;
+}
+
 int main() {
     int year;
     cout << "Enter a year to find out whether it is a leap year or not:" << endl;
@@ -431,5 +496,20 @@ int main() {
     int lcm = findLCM(n1, n2);
     cout << lcm << endl;
 
+    int S;
+    cout << "Please enter the value of S:" << endl;
+    cin >> S;
+    int num = MDistance(S);
+    cout << num << endl;
+
+    gameOf21();
+
+    int n;
+    cout << "Enter the value of n:" << endl;
+    cin >> n;
+    vector<int> one2N = oneToN(n);
+    for (int j = 0; j < one2N.size(); j++){
+            cout << one2N[j] << endl;
+        }
     return 0; 
 }
