@@ -1,11 +1,15 @@
 #include <iostream>
 using namespace std;
+#include <vector>
 void printIncreasing(); 
 void printTo();
 void Factorial();
-int squareArea();
-void printSumOfOdds();
-void printNumberLines();
+int squareArea(int);
+void printSumOfOdds(void); 
+void printNumberLines(void);
+bool isPrime(bool);
+vector <int> findPrimes(int);
+int saveNum(int);
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -204,6 +208,68 @@ void printNumberLines(int nLines)
 }
 
 /**
+ * @brief for given number of nSeconds show the time with appropriate units.
+ * include units like days, hours, mins, seconds
+ * Ex 1: nSeconds = 50
+ * Output 1:
+ * 50second
+ * 
+ * Ex 2: nSeconds = 320
+ * Output 2:
+ * 5mins 20seconds
+ * 
+ * @param nSeconds 
+ */
+void printTime(long nSeconds){
+
+}
+/**
+ * @brief find out if the number entered by the user enters is a prime number or not.
+ * 
+ */
+bool isPrime(int num)
+{
+    for(int i = 2;i <= (num-1);i++)
+    { 
+        if (num % i == 0)
+        {  
+            //cout << "The number " << num << " is not a prime number";
+            return false;
+        }
+    } 
+    //cout << "The number " << num << " is a prime number";
+    return true;
+    
+}
+
+vector <int> findPrimes(int numIn)
+{
+    vector <int> PrimeNumbers;
+    for(int j = 2;j <= numIn;j++)
+    {
+        if(isPrime(j) == true)
+        PrimeNumbers.push_back(j);
+    }
+    return PrimeNumbers;
+}
+
+vector <int> saveNum()
+{
+    vector <int> save;
+    for (int i = 1;i <= 10;i++) 
+    {
+        save.push_back(i);
+    }
+    return save;
+}
+
+
+
+
+
+
+
+/**
  * @brief prints the version of cpp used by compiler
  * 
  */
@@ -241,28 +307,40 @@ int main(int argc, char** argv)
     cout << "Please enter the number till which you want the odd numbers and it's sum:";
     cin >> numberIn;
     printSumOfOdds(numberIn);
-*/
+
     int nLines = 0;
     cout << "Please enter a number:";
     cin >> nLines;
     printNumberLines(nLines);
 
+    int num = 0;
+    cout << "Please enter a number:";
+    cin >> num;
+    bool ans = isPrime(num);
+    if (isPrime(num) == false)
+    {
+        cout << "The number " << num << " is not a prime number";
+    }
+    else
+    {
+        cout << "The number " << num << " is a prime number";
+    }
+    isPrime(num);
+
+    int numIn = 0;
+    cout << " please enter a number";
+    cin >> numIn;
+    for (int k = 0;k <= numIn;k++)
+    {
+        vector <int> primeNums = findPrimes(100);
+        cout << primeNums[j] << ", ";
+    }
+    findPrimes(numIn);
     return 0;
-}
-
-/**
- * @brief for given number of nSeconds show the time with appropriate units.
- * include units like days, hours, mins, seconds
- * Ex 1: nSeconds = 50
- * Output 1:
- * 50second
- * 
- * Ex 2: nSeconds = 320
- * Output 2:
- * 5mins 20seconds
- * 
- * @param nSeconds 
- */
-void printTime(long nSeconds){
-
+*/
+    vector <int> recordVal = saveNum();
+    for (int k = 1;k <= recordVal.size;k++)
+    {
+        cout << recordVal[k];
+    }
 }
