@@ -21,6 +21,7 @@ int findLCM(int, int);
 int MDistance(int);
 void gameOf21();
 vector<int> oneToN(int);
+vector<int> switchedIndexes(vector<int> oneToNum);
 
 /**
  * @brief myPrimeScore: Write a functionn which calculates the score to an input number @param numberIn.
@@ -376,7 +377,7 @@ void gameOf21(){
                 cout << "Player 2 wins!" << endl;
                 break;
             }
-            cout << ms << endl;
+            cout << "Matchsticks remaining: " << ms << endl;
         }
         if (turn == 2){
             cout << "Enter the number of matchsticks between 1 and 4 (Player 2):" << endl;
@@ -393,7 +394,7 @@ void gameOf21(){
                 cout << "Player 1 wins!" << endl;
                 break;
             }
-            cout << ms << endl;
+            cout << "Matchsticks remaining: " << ms << endl;
         }
     }
 }
@@ -406,6 +407,14 @@ vector<int> oneToN(int n){
     return oneToNum;
 }
 
+vector<int> switchedIndexes(vector<int> oneToNum){
+    for (int i = 0; i < oneToNum.size() /2; i++){
+        int t = oneToNum[2*i];
+        oneToNum[2*i] = oneToNum[2*i+1];
+        oneToNum[2*i + 1] = t;
+    }
+    return oneToNum;
+}
 int main() {
     int year;
     cout << "Enter a year to find out whether it is a leap year or not:" << endl;
@@ -508,8 +517,17 @@ int main() {
     cout << "Enter the value of n:" << endl;
     cin >> n;
     vector<int> one2N = oneToN(n);
+    cout << "Ordered vector:" << endl;
     for (int j = 0; j < one2N.size(); j++){
-            cout << one2N[j] << endl;
-        }
+            cout << one2N[j] << " ";
+    }
+    cout << " " << endl;
+
+    vector<int> switchedVector = switchedIndexes(one2N);
+    cout << "Switched vector:" << endl;
+    for (int j = 0; j < switchedVector.size(); j++){
+            cout << switchedVector[j] << " ";
+    }
+    cout << " " << endl;
     return 0; 
 }
