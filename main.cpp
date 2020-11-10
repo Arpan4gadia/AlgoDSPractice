@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <string>
+#include <cmath>
 using namespace std;
 
 int PrimeScore(int);
@@ -20,9 +22,15 @@ int FindGCD(int, int);
 int FindLCM(int, int); 
 int PrintVector(vector<int>);
 int FindPoints(int);
-int get_fibon();
+void game_of_21();
+vector<int> add_1_to_10();
+vector<int> replace_elements();
+vector<int> add_random_numbers();
+int pythagoras();
+void is_pallindrome();
 
-int PrimeScore(int numberIn){
+int PrimeScore(int numberIn)
+{
     int score = 0;
     int mod2 = numberIn % 2;
     int mod3 = numberIn % 3;
@@ -57,7 +65,7 @@ int PrimeScore(int numberIn){
         score += 19;
     }
     return score;
-    }
+}
 bool IsLeapYear(int year){
     bool ret = true;
     if (year % 100 == 0)
@@ -241,7 +249,6 @@ int FindLCM(int n1, int n2) {
     return lcm;
 }
 int FindPoints(int S) {
-    // Calculate Manhatan distance
     int num1 = 0;
     for (int a = -1 * S; a <= S; a++)
     {
@@ -255,8 +262,10 @@ int FindPoints(int S) {
     }
     return num1;
 }
-int get_fibon() {
-    try {
+int get_fibon()
+{
+    try
+    {
         double long a = 0, b = 1;
         int times = 0;
         cout << "Enter how many times: ";
@@ -269,73 +278,178 @@ int get_fibon() {
             cout << b << endl;
         }
     }
-    catch (overflow_error e1) {
+    catch (overflow_error e1)
+    {
         cout << "Overflow.";
     }
 
-    return 0;
+    return 0;}
+void game_of_21() {
+    int match_sticks = 21;
+    int taken = 0;
+    int taken1 = 0;
+    while (match_sticks >= 1) {
+        string turn = "Player1";
+        
+        cout << "Enter the number of matchsticks you want to pick: Player 1  " << endl;
+        cin >> taken;
+        
+        if (taken > 4) {
+            cout << "ERROR!!!!";
+            cout << "Enter the number of matchsticks you want to pick: Player 1  " << endl;
+            cin >> taken;
+            continue;
+        }
+        if (taken > match_sticks) {
+            cout << "ERROR!!!!";
+            cout << "Enter the number of matchsticks you want to pick: Player 1  " << endl;
+            cin >> taken;
+            continue;
+        }
+        if (taken <= 0) {
+            cout << "ERROR!!!!";
+            cout << "Enter the number of matchsticks you want to pick: Player 1  " << endl;
+            cin >> taken;
+            continue;
+        }
+
+        match_sticks -= taken;
+        cout << "Number of matchsticks: " << match_sticks << endl;
+
+        if (turn == "Player1" && match_sticks <= 0)
+        {
+            cout << "Player 2 won";
+            break;
+        }
+        if (turn == "Player2" && match_sticks <= 0)
+        {
+            cout << "Player 1 won.";
+            break;
+        }
+
+        cout << "Enter the namber of matchsticks you want to pick: Player 2  " << endl;
+        cin >> taken1;
+
+        if (taken1 > 4) {
+            cout << "ERROR!!!!";
+            cout << "Enter the number of matchsticks you want to pick: Player 2  " << endl;
+            cin >> taken1;
+            continue;
+        }
+        if (taken1 > match_sticks) {
+            cout << "ERROR!!!!";
+            cout << "Enter the number of matchsticks you want to pick: Player 2  " << endl;
+            cin >> taken1;
+            continue;
+        }
+        if (taken1 <= 0) {
+            cout << "ERROR!!!!";
+            cout << "Enter the number of matchsticks you want to pick: Player 2  " << endl;
+            cin >> taken1;
+            continue;
+        }
+
+        match_sticks -= taken1;
+        cout << "Number of matchsticks: " << match_sticks << endl;
+
+        if (turn == "Player1" && match_sticks <= 0)
+        {
+            cout << "Player 2 won";
+            break;
+        }
+        if (turn == "Player2" && match_sticks <= 0)
+        {
+            cout << "Player 1 won.";
+            break;
+        }
+
+        turn = "Player2";
+    }
 }
-int main()
-{
+vector<int> add_1_to_10() {
+    vector<int> nums;
+    for (int i = 1; i <= 10; i++) {
+        nums.push_back(i);
+    }
+    return nums;
+}
+vector<int> replace_elements() {
+    vector<int> s = add_1_to_10();
+    for (int x = 0; x < (s.size())/2; x++) {
+        int t = 0; 
+        t = s[2 * x];
+        s[2 * x] = s[(2 * x) + 1];
+        s[(2 * x) + 1] = t;
+    }
+    return s;
+}
+vector<int> add_random_numbers() {
+    vector<int> s;
+    for (int i = 0; i < s.size(); i++) {
+        s.push_back(rand());
+    }
+    return s;
+}
+void is_pallindrome() {
+    int NumIn = 0; 
+    cout << "Enter NumIn: ";
+    cin >> NumIn;
+    string str = to_string(NumIn);
+    string str1 = string(str.rbegin(), str.rend());
+    if (str == str1) {
+        cout << "It is a pallindrome!";
+    }
+    else {
+        cout << "It is not..";
+    }
+    return;
+}
+int main() {
     int number = 0;
     int year = 0;
     cout << "Enter any number: ";
     cin >> number;
     int score = PrimeScore(number);
     cout << score << endl;
-
     cout << "Enter a year: ";
     cin >> year;
     bool hi = IsLeapYear(year);
     cout << hi << endl;
-
     greetMe();
-
     printCPPVersion();
-
-
     int a = 0;
     cout << "Enter any number: ";
     cin >> a;
     printIncreasing(a);
-
-
     int b = 0;
     cout << "Enter any number: " << endl;
     cin >> b;
     printTo(b);
-
     int c = 0;
     cout << "Enter a number: ";
     cin >> c;
     factorial(c);
-
     int f = 0;
     cout << "Enter a number: ";
     cin >> f;
-    printf("Factorial of %d = %ld", f, multiplyNumbers(f));
-
+    printf("Factorial of %d = %ld", f, multiplyNumbers(f), '\n');
     int d = 0;
     cout << "Enter a number: ";
     cin >> d;
     printTable(d);
-
     int e = 0;
     cout << "Enter a number: ";
     cin >> e;
     printSumOfOdds(e);
-
     int g = 0;
     cout << "Enter a number: ";
     cin >> g;
     printNumberLines(g);
-
-    int number = 0;
+    int number1 = 0;
     cout << "Enter a number: ";
     cin >> number;
     bool prime = isPrime(number);
     cout << prime;
-
     int numinput = 0;
     cout << "Enter a number: ";
     cin >> numinput;
@@ -352,7 +466,6 @@ int main()
     {
         cout << factors[j] << ", ";
     }
-
     int num1 = 0; 
     int num2 = 0;
     cout << "Enter num1: ";
@@ -361,20 +474,26 @@ int main()
     cin >> num2;
     int gcd1 = FindGCD(num1, num2);
     cout << gcd1 << endl;
-
-    int a = 0, b = 0;
+    int h = 0, i = 0;
     cout << "Enter a: ";
-    cin >> a;
+    cin >> h;
     cout << "Enter b: ";
-    cin >> b;
+    cin >> i;
     int lcm = FindLCM(a, b);
-
+    cout << lcm << endl;
     int points = 0;
     cout << "Enter the amount of points: ";
     cin >> points;
-    points1 = FindPoints(points)
+    int points1 = FindPoints(points);
     cout << points1;
-    
     get_fibon();
+    game_of_21();
+    vector<int> nums = add_1_to_10();
+    PrintVector(nums);
+    vector<int> s = replace_elements();
+    PrintVector(s);
+    vector<int> er = add_random_numbers();
+    PrintVector(er);
+    is_pallindrome();
     return 0;
 }
